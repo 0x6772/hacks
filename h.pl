@@ -29,19 +29,19 @@ use strict;
 my @powers = qw(KB MB GB TB PB);
 my ($item, $power);
 while (<>) {
-	foreach $item (split()) {
-		chomp($item);
-		if ($item =~ m/^[0-9]+$/) {
-			$power = 0;
-			while ($item > 1024) {
-				$item /= 1024;
-				$power++;
-			}
-			printf "%.2f %s", $item, $powers[$power];
-		} else {
-			print $item;
-		}
-		print " ";
-	}
-	print "\n";
+  foreach $item (split()) {
+    chomp($item);
+    if ($item =~ m/^[0-9]+$/) {
+      $power = 0;
+      while ($item > 1024) {
+        $item /= 1024;
+        $power++;
+      }
+      printf "%.2f %s", $item, $powers[$power];
+    } else {
+      print $item;
+    }
+    print " ";
+  }
+  print "\n";
 }
