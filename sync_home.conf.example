@@ -1,0 +1,11 @@
+host some.where.else
+path ~/Documents
+path ~/Pictures
+path ~/bin
+path ~/.gnupg/gpg.conf
+path ~/.screenrc
+path ~/.ssh/config
+path ~/.ssh/authorized_keys
+path ~/.vimrc
+path ~/.zshenv
+path ~/.zshrc
