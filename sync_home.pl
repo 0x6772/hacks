@@ -9,7 +9,7 @@
 #
 # Very much still a WIP at time of writing (2019-03-14)
 
-# Copyright (c) 2019 Alan Gabriel Rosenkoetter
+# Copyright (c) 2021 Alan Gabriel Rosenkoetter
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -32,6 +32,8 @@
 use strict;
 use File::Spec::Functions qw(catfile splitpath);
 
+# XXX oh just suck it up and use a library to parse an ini file,
+# wouldya?
 my $conf_file = (splitpath($0))[2];
 $conf_file =~ s,\..+$,.conf,;
 $conf_file = catfile($ENV{"HOME"}, $conf_file);
@@ -55,6 +57,8 @@ while (my $line = <$conf_fh>)
   {
     push @paths, $content;
   }
+  # TODO handle cloud targets like localhost:~/Cubbit
+  # maybe with keyword "target"...? "tpath"? Something like that.
   else
   {
     print STDERR "Skipping unrecognized conf line [$line].\n";
